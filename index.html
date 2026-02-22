@@ -1,11 +1,169 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>Моя студия</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="color-scheme" content="light" />
+  <title>SetFlow — скоро запуск</title>
+  <meta name="description" content="SetFlow — сайт в разработке. Скоро будет красиво." />
+  <meta name="theme-color" content="#ffffff" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#ffffff;
+      --text:#0a0a0a;
+      --muted: rgba(10,10,10,.62);
+    }
+
+    *{ box-sizing:border-box; }
+    html, body{ height:100%; }
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:"Open Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ultra subtle “Apple-ish” light */
+    body::before,
+    body::after{
+      content:"";
+      position:fixed;
+      width:min(700px, 90vw);
+      height:min(700px, 90vw);
+      border-radius:999px;
+      filter: blur(80px);
+      opacity:.28;
+      pointer-events:none;
+      z-index:-1;
+    }
+    body::before{
+      left:-280px; top:-320px;
+      background: radial-gradient(circle at 35% 35%, rgba(0,0,0,.14), transparent 60%);
+    }
+    body::after{
+      right:-340px; bottom:-380px;
+      background: radial-gradient(circle at 60% 60%, rgba(0,0,0,.10), transparent 62%);
+    }
+
+    .wrap{
+      min-height:100vh;
+      display:grid;
+      place-items:center;
+      padding: clamp(22px, 4vw, 56px);
+      text-align:center;
+    }
+
+    .content{
+      width:min(820px, 100%);
+    }
+
+    .logo{
+      width: clamp(140px, 20vw, 220px);
+      height:auto;
+      display:block;
+      margin: 0 auto clamp(22px, 3.2vw, 32px);
+    }
+
+    h1{
+      font-family:"Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-weight:700;
+      letter-spacing:-0.035em;
+      margin:0 0 14px;
+      font-size: clamp(40px, 6vw, 74px);
+      line-height:1.05;
+    }
+
+    .lead{
+      margin:0 auto;
+      max-width: 64ch;
+      color: var(--muted);
+      font-size: clamp(16px, 2.1vw, 20px);
+      line-height:1.6;
+    }
+
+    .actions{
+      margin-top: clamp(18px, 3.2vw, 28px);
+      display:flex;
+      justify-content:center;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding: 12px 18px;
+      border-radius: 14px;
+      background: var(--text);
+      color: var(--bg);
+      text-decoration:none;
+      font-weight:600;
+      font-size:14px;
+      transition: transform .18s ease, filter .18s ease;
+      will-change: transform;
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      filter: brightness(.96);
+    }
+
+    footer{
+      margin-top: clamp(30px, 5vw, 52px);
+      color: var(--muted);
+      font-size: 13px;
+      display:flex;
+      justify-content:center;
+      gap: 10px;
+      flex-wrap:wrap;
+    }
+    footer a{
+      color: inherit;
+      text-decoration:none;
+      border-bottom: 1px solid transparent;
+    }
+    footer a:hover{ border-bottom-color: currentColor; }
+
+    @media (prefers-reduced-motion: reduce){
+      .btn{ transition:none; }
+      .btn:hover{ transform:none; }
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Сайт работает</h1>
-  <p>Digital-студия</p>
+  <main class="wrap">
+    <section class="content" aria-label="Заглушка сайта SetFlow">
+      <img class="logo" src="setflow_ru_black.svg" alt="SetFlow" />
+
+      <h1>Скоро будет красиво.</h1>
+
+      <p class="lead">
+        Мы собираем новый сайт Сетфлоу: аккуратный, быстрый и сфокусированный на результате.
+        Пока — короткая заглушка. Если нужно обсудить проект, напишите нам.
+      </p>
+
+      <div class="actions" role="group" aria-label="Действия">
+        <a class="btn" href="mailto:hello@setflow.ru?subject=SetFlow%20—%20запрос%20по%20проекту">Написать на почту</a>
+      </div>
+
+      <footer>
+        <span>© <span id="y"></span> SetFlow</span>
+        <span aria-hidden="true">•</span>
+        <a href="mailto:hello@setflow.ru">hello@setflow.ru</a>
+      </footer>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
