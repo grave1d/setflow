@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SetFlow — Test</title>
+  <meta name="description" content="Тестовая страница SetFlow." />
+  <style>
+    :root{
+      --bg:#ffffff;
+      --text:#0a0a0a;
+      --muted: rgba(10,10,10,.62);
+    }
+
+    *{ box-sizing:border-box; }
+    html, body{ height:100%; }
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:"Open Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      display:grid;
+      place-items:center;
+      padding:24px;
+      text-align:center;
+    }
+
+    .card{
+      max-width: 640px;
+    }
+
+    h1{
+      margin:0 0 12px;
+      font-size: clamp(32px, 5vw, 56px);
+      font-family:"Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      letter-spacing:-0.03em;
+    }
+
+    p{
+      margin:0;
+      color:var(--muted);
+      font-size: clamp(16px, 2vw, 20px);
+      line-height:1.6;
+    }
+
+    .back{
+      margin-top:24px;
+      display:inline-block;
+      color:var(--text);
+      text-decoration:none;
+      border-bottom:1px solid currentColor;
+      padding-bottom:2px;
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h1>Test page</h1>
+    <p>Это вторая страница сайта с названием test.</p>
+    <a class="back" href="index.html">Вернуться на главную</a>
+  </main>
+</body>
+</html>

@@ -94,6 +94,8 @@
       margin-top: clamp(18px, 3.2vw, 28px);
       display:flex;
       justify-content:center;
+      gap:12px;
+      flex-wrap:wrap;
     }
 
     .btn{
@@ -113,6 +115,16 @@
     .btn:hover{
       transform: translateY(-1px);
       filter: brightness(.96);
+    }
+
+    .btn-secondary{
+      background: transparent;
+      color: var(--text);
+      border:1px solid rgba(10,10,10,.22);
+    }
+    .btn-secondary:hover{
+      filter:none;
+      background: rgba(10,10,10,.04);
     }
 
     footer{
@@ -152,6 +164,7 @@
 
       <div class="actions" role="group" aria-label="Действия">
         <a class="btn" href="mailto:hello@setflow.ru?subject=SetFlow%20—%20запрос%20по%20проекту">Написать на почту</a>
+        <a class="btn btn-secondary" href="test.html">Открыть test</a>
       </div>
 
       <footer>
